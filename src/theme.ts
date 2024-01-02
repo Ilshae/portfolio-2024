@@ -1,3 +1,7 @@
+export type Theme = {
+  [key: string]: Theme
+}
+
 export const theme = {
   color: {
     white: "#ffffff",
