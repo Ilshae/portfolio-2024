@@ -4,6 +4,7 @@ import Logo from "./Logo.tsx"
 import Links from "./Links.tsx"
 import { useEffect, useState } from "react"
 import { CommonContainer } from "../styles.ts"
+import HamburgerButton from "./HamburgerButton.tsx"
 
 const Navbar = () => {
   // only mobile has closeable menu
@@ -27,6 +28,7 @@ const Navbar = () => {
       <NavContainer>
         <Logo isOpen={isOpen} setIsOpen={setIsOpen} />
         <Links isOpen={isOpen} setIsOpen={setIsOpen} />
+        <HamburgerButton isOpen={isOpen} setIsOpen={setIsOpen} />
       </NavContainer>
     </Header>
   )
