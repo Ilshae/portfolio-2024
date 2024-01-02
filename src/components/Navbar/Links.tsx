@@ -1,33 +1,87 @@
 import { Link as RSLink } from "react-scroll"
 import styled from "styled-components"
-import { linkAnchors } from "./linkAnchors.ts"
+import { defLinkProps, menuAnchors } from "./common.ts"
+import { Dispatch, FC } from "react"
 
-const defLinkProps = {
-  spy: true,
-  offset: -170,
-  smooth: true,
-  duration: 300,
-}
-
-const Links = () => {
+const Links: FC<{ isOpen: boolean; setIsOpen: Dispatch<boolean> }> = ({
+  isOpen,
+  setIsOpen,
+}) => {
   return (
-    <div>
-      <Link to={linkAnchors.home} {...defLinkProps}>
+    <nav>
+      <Link
+        to={menuAnchors.home}
+        activeClass="active"
+        onClick={() => setIsOpen(false)}
+        {...defLinkProps}
+      >
         Home
       </Link>
-      <Link to={linkAnchors.about} {...defLinkProps}>
+      <Link
+        to={menuAnchors.about}
+        activeClass="active"
+        onClick={() => setIsOpen(false)}
+        {...defLinkProps}
+      >
         About
       </Link>
-      <Link to={linkAnchors.work} {...defLinkProps}>
+      <Link
+        to={menuAnchors.work}
+        activeClass="active"
+        onClick={() => setIsOpen(false)}
+        {...defLinkProps}
+      >
         Work
       </Link>
-      <Link to={linkAnchors.contact} {...defLinkProps}>
+      <Link
+        to={menuAnchors.contact}
+        activeClass="active"
+        onClick={() => setIsOpen(false)}
+        {...defLinkProps}
+      >
         Contact
       </Link>
-    </div>
+    </nav>
   )
 }
 
-const Link = styled(RSLink)``
+const Link = styled(RSLink)`
+  margin-right: 32px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 6px;
+  text-transform: uppercase;
+
+  &::after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: ${({ theme }) => theme.color.pink};
+    transition:
+      width 0.3s ease 0s,
+      left 0.3s ease 0s;
+    width: 0;
+  }
+
+  &:hover:after {
+    width: 100%;
+    left: 0;
+  }
+
+  &.active::after {
+    width: 100% !important;
+    left: 0 !important;
+    height: 3.5px !important;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+`
 
 export default Links

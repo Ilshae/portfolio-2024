@@ -9,14 +9,24 @@ export const theme = {
     pink: "#ff006a",
     black: "#1e1e1e",
   },
+  container: {
+    maxWidth: "1900px",
+    margin: {
+      desktop: "0 100px",
+      laptopL: "0 80px",
+      laptop: "0 20px",
+      tablet: "0 20px",
+      mobileM: "0 20px",
+    },
+  },
   fontFamily: "'Noto Sans', sans-serif",
   fontSize: {
     small: "14px",
     regular: "16px",
     subTitle: "20px",
     title: "24px",
-    bigTitle: "30px",
-    reallyBigTitle: "40px",
+    bigTitle: "32px",
+    reallyBigTitle: "38px",
   },
   screenSize: {
     mobileS: "320px",

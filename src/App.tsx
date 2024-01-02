@@ -2,6 +2,7 @@ import { Theme, theme } from "./theme.ts"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
 import { FC, lazy, Suspense } from "react"
 import Loading from "./components/Loading/Loading.tsx"
+import Content from "./components/Content/Content.tsx"
 
 const Navbar = lazy(() => import("./components/Navbar/Navbar.tsx"))
 
@@ -11,6 +12,7 @@ const App: FC = () => {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Navbar />
+        <Content />
       </ThemeProvider>
     </Suspense>
   )
@@ -21,6 +23,8 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     font-family: ${({ theme }) => theme.fontFamily};
     line-height: 1.7;
     overflow-x: hidden;
+    color: ${({ theme }) => theme.color.black};
+    margin: 0;
   }
 `
 

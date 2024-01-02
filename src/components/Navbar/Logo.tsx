@@ -1,15 +1,17 @@
 import { Link as RSLink } from "react-scroll"
-import { linkAnchors } from "./linkAnchors.ts"
+import { defLinkProps, menuAnchors } from "./common.ts"
 import styled from "styled-components"
+import { Dispatch, FC } from "react"
 
-const Logo = () => {
+const Logo: FC<{ isOpen: boolean; setIsOpen: Dispatch<boolean> }> = ({
+  isOpen,
+  setIsOpen,
+}) => {
   return (
     <Link
-      to={linkAnchors.home}
-      spy={true}
-      offset={-150}
-      smooth={true}
-      duration={300}
+      to={menuAnchors.home}
+      onClick={() => setIsOpen(false)}
+      {...defLinkProps}
     >
       Ingrid<StyledDiv>Pruszyńska</StyledDiv>
     </Link>
@@ -23,7 +25,7 @@ const Link = styled(RSLink)`
 
 const StyledDiv = styled.div`
   font-weight: 600;
-  font-size: ${({ theme }) => theme.fontSize.bigTitle};
+  font-size: ${({ theme }) => `calc(${theme.fontSize.reallyBigTitle} * 0.7)`};
   color: ${({ theme }) => theme.color.pink};
   margin-left: 2px;
   display: inline-block;
