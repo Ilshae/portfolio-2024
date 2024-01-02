@@ -5,14 +5,12 @@ export type Theme = {
 export const theme = {
   color: {
     white: "#ffffff",
-    blue: "#0298ba",
-    green: "#54a800",
-    pink: "#bf0040",
-    black: "#000",
+    grey: "#747474",
+    pink: "#ff006a",
+    black: "#1e1e1e",
   },
   fontFamily: {
-    text: "'Poppins', sans-serif",
-    title: "'Righteous', cursive",
+    text: "'Noto Sans', sans-serif",
   },
   screenSize: {
     mobileS: "320px",
