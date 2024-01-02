@@ -18,10 +18,16 @@ const App: FC = () => {
 
 const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
   body {
-    font-family: ${({ theme }) => theme.fontFamily.text};
+    font-family: ${({ theme }) => theme.fontFamily};
     line-height: 1.7;
     overflow-x: hidden;
   }
 `
 
 export default App
+
+/* TODO:
+- po skrolowaniu w dół pojawia się cień pod navbarem
+- animacje i podkreślenia pod indywidualnymi przyciskami anchorów
+- coś jest nie tak z czcionka noto-sans
+ */

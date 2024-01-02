@@ -9,8 +9,14 @@ export const theme = {
     pink: "#ff006a",
     black: "#1e1e1e",
   },
-  fontFamily: {
-    text: "'Noto Sans', sans-serif",
+  fontFamily: "'Noto Sans', sans-serif",
+  fontSize: {
+    small: "14px",
+    regular: "16px",
+    subTitle: "20px",
+    title: "24px",
+    bigTitle: "30px",
+    reallyBigTitle: "40px",
   },
   screenSize: {
     mobileS: "320px",
