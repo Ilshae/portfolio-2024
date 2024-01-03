@@ -19,6 +19,7 @@ const Logo: FC<{ isOpen: boolean; setIsOpen: Dispatch<boolean> }> = ({
 }
 
 const Link = styled(RSLink)`
+  height: 60px;
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSize.reallyBigTitle};
 `

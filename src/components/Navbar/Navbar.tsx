@@ -50,6 +50,7 @@ const Header = styled.nav<{ $showShadow: boolean; $isOpen: boolean }>`
 `
 
 const NavContainer = styled(CommonContainer)`
+  height: 60px;
   padding: 0 16px;
   display: flex;
   justify-content: space-between;

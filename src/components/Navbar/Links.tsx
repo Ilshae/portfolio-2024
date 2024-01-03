@@ -9,7 +9,7 @@ const Links: FC<{ isOpen: boolean; setIsOpen: Dispatch<boolean> }> = ({
   setIsOpen,
 }) => {
   return (
-    <Nav>
+    <Nav $isOpen={isOpen}>
       <Link
         to={menuAnchors.home}
         activeClass="active"
@@ -46,9 +46,17 @@ const Links: FC<{ isOpen: boolean; setIsOpen: Dispatch<boolean> }> = ({
   )
 }
 
-const Nav = styled.nav`
+const Nav = styled.nav<{ $isOpen: boolean }>`
   @media ${device.tablet} {
-    display: none;
+    display: ${({ $isOpen }) => ($isOpen ? "flex" : "none")};
+    height: ${({ $isOpen }) => ($isOpen ? "100vh" : "auto")};
+    width: ${({ $isOpen }) => ($isOpen ? "100%" : "auto")};
+    position: ${({ $isOpen }) => ($isOpen ? "fixed" : "static")};
+    top: ${({ $isOpen }) => ($isOpen ? "59px" : "0")};
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    background-color: ${({ theme }) => theme.color.black};
   }
 `
 
@@ -58,7 +66,6 @@ const Link = styled(RSLink)`
   font-weight: 700;
   position: relative;
   padding-bottom: 6px;
-  text-transform: uppercase;
 
   &::after {
     background: none repeat scroll 0 0 transparent;
@@ -88,6 +95,13 @@ const Link = styled(RSLink)`
 
   &:last-of-type {
     margin-right: 0;
+  }
+
+  @media ${device.tablet} {
+    margin: 24px 0;
+    font-size: ${({ theme }) => theme.fontSize.bigTitle};
+    width: min-content;
+    padding-bottom: 0;
   }
 `
 

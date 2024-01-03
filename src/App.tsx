@@ -34,4 +34,5 @@ export default App
 - po skrolowaniu w dół pojawia się cień pod navbarem
 - animacje i podkreślenia pod indywidualnymi przyciskami anchorów
 - coś jest nie tak z czcionka noto-sans
+- dodaj style slide bottom, to jest animacja przy renderowaniu strony
  */

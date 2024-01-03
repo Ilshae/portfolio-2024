@@ -28,8 +28,12 @@ const HamburgerButton: FC<{
 
 const Wrapper = styled.div`
   height: 50px;
-  display: flex;
+  display: none;
   align-items: center;
+
+  @media ${device.tablet} {
+    display: flex;
+  }
 `
 
 const Hamburger = styled.div<{ $isOpen: boolean }>`
@@ -44,11 +48,7 @@ const Hamburger = styled.div<{ $isOpen: boolean }>`
   -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   cursor: pointer;
-  display: none;
-
-  @media ${device.tablet} {
-    display: block;
-  }
+  display: block;
 
   span {
     display: block;
