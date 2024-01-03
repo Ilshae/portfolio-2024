@@ -2,13 +2,14 @@ import { Link as RSLink } from "react-scroll"
 import styled from "styled-components"
 import { defLinkProps, menuAnchors } from "./common.ts"
 import { Dispatch, FC } from "react"
+import { device } from "../../theme.ts"
 
 const Links: FC<{ isOpen: boolean; setIsOpen: Dispatch<boolean> }> = ({
   isOpen,
   setIsOpen,
 }) => {
   return (
-    <nav>
+    <Nav>
       <Link
         to={menuAnchors.home}
         activeClass="active"
@@ -41,9 +42,15 @@ const Links: FC<{ isOpen: boolean; setIsOpen: Dispatch<boolean> }> = ({
       >
         Contact
       </Link>
-    </nav>
+    </Nav>
   )
 }
+
+const Nav = styled.nav`
+  @media ${device.tablet} {
+    display: none;
+  }
+`
 
 const Link = styled(RSLink)`
   margin-right: 32px;

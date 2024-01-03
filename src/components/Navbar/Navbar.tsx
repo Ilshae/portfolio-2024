@@ -53,6 +53,7 @@ const NavContainer = styled(CommonContainer)`
   padding: 0 16px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `
 
 export default Navbar
