@@ -72,10 +72,11 @@ const Nav = styled.nav<{ $isOpen: boolean }>`
 
 const Link = styled(RSLink)`
   margin-right: 32px;
-  font-size: ${({ theme }) => theme.fontSize.xl2};
+  font-size: ${({ theme }) => theme.fontSize.xl};
   font-weight: 700;
   position: relative;
   padding-bottom: 6px;
+  cursor: pointer;
 
   &::after {
     background: none repeat scroll 0 0 transparent;

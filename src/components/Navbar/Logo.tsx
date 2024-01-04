@@ -21,6 +21,7 @@ const Link = styled(RSLink)`
   height: ${navbarHeight.desktopL};
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSize.xl4};
+  cursor: pointer;
 
   @media ${device.desktop} {
     height: ${navbarHeight.desktop};

@@ -5,6 +5,7 @@ import Loading from "./components/Loading/Loading.tsx"
 import Content from "./components/Content/Content.tsx"
 
 const Navbar = lazy(() => import("./components/Navbar/Navbar.tsx"))
+const Hero = lazy(() => import("./components/Hero/Hero.tsx"))
 
 const App: FC = () => {
   return (
@@ -12,6 +13,7 @@ const App: FC = () => {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Navbar />
+        <Hero />
         <Content />
       </ThemeProvider>
     </Suspense>
