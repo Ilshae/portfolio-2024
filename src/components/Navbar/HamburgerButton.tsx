@@ -1,6 +1,7 @@
 import { Dispatch, FC } from "react"
 import styled from "styled-components"
 import { device } from "../../theme.ts"
+import { navbarHeight } from "./common.ts"
 
 const HamburgerButton: FC<{
   isOpen: boolean
@@ -27,7 +28,7 @@ const HamburgerButton: FC<{
 }
 
 const Wrapper = styled.div`
-  height: 50px;
+  height: ${navbarHeight.tablet};
   display: none;
   align-items: center;
 
@@ -38,14 +39,8 @@ const Wrapper = styled.div`
 
 const Hamburger = styled.div<{ $isOpen: boolean }>`
   width: 40px;
-  height: 32px;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
+  height: 24px;
   transform: rotate(0deg);
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   cursor: pointer;
   display: block;
@@ -53,17 +48,11 @@ const Hamburger = styled.div<{ $isOpen: boolean }>`
   span {
     display: block;
     position: absolute;
-    height: 5px;
+    height: 4px;
     width: 50%;
     background: ${({ theme }) => theme.color.pink};
     opacity: 1;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: 0.25s ease-in-out;
-    -moz-transition: 0.25s ease-in-out;
-    -o-transition: 0.25s ease-in-out;
     transition: 0.25s ease-in-out;
   }
 
@@ -78,7 +67,7 @@ const Hamburger = styled.div<{ $isOpen: boolean }>`
   }
 
   span:nth-child(1) {
-    top: ${({ $isOpen }) => ($isOpen ? "9px" : "0")};
+    top: ${({ $isOpen }) => ($isOpen ? "5px" : "0")};
     left: ${({ $isOpen }) => ($isOpen ? "5px" : "0")};
     -webkit-transform: ${({ $isOpen }) =>
       $isOpen ? "rotate(45deg)" : "rotate(0deg)"};
@@ -90,7 +79,7 @@ const Hamburger = styled.div<{ $isOpen: boolean }>`
   }
 
   span:nth-child(2) {
-    top: ${({ $isOpen }) => ($isOpen ? "9px" : "0")};
+    top: ${({ $isOpen }) => ($isOpen ? "5px" : "0")};
     left: ${({ $isOpen }) => ($isOpen ? "calc(50% - 5px)" : "50%")};
     -webkit-transform: ${({ $isOpen }) =>
       $isOpen ? "rotate(-45deg)" : "none"};
@@ -100,19 +89,19 @@ const Hamburger = styled.div<{ $isOpen: boolean }>`
   }
 
   span:nth-child(3) {
-    top: 12px;
+    top: 10px;
     left: ${({ $isOpen }) => ($isOpen ? "-50%" : "0")};
     opacity: ${({ $isOpen }) => ($isOpen ? "0" : "1")};
   }
 
   span:nth-child(4) {
-    top: 12px;
+    top: 10px;
     left: ${({ $isOpen }) => ($isOpen ? "100%" : "50%")};
     opacity: ${({ $isOpen }) => ($isOpen ? "0" : "1")};
   }
 
   span:nth-child(5) {
-    top: ${({ $isOpen }) => ($isOpen ? "20px" : "24px")};
+    top: ${({ $isOpen }) => ($isOpen ? "16px" : "20px")};
     left: ${({ $isOpen }) => ($isOpen ? "5px" : "0")};
     -webkit-transform: ${({ $isOpen }) =>
       $isOpen ? "rotate(-45deg)" : "none"};
@@ -122,7 +111,7 @@ const Hamburger = styled.div<{ $isOpen: boolean }>`
   }
 
   span:nth-child(6) {
-    top: ${({ $isOpen }) => ($isOpen ? "20px" : "24px")};
+    top: ${({ $isOpen }) => ($isOpen ? "16px" : "20px")};
     left: ${({ $isOpen }) => ($isOpen ? "calc(50% - 5px)" : "50%")};
     -webkit-transform: ${({ $isOpen }) => ($isOpen ? "rotate(45deg)" : "none")};
     -moz-transform: ${({ $isOpen }) => ($isOpen ? "rotate(45deg)" : "none")};

@@ -1,10 +1,11 @@
-// import { useState } from "react"
 import styled from "styled-components"
 import Logo from "./Logo.tsx"
 import Links from "./Links.tsx"
 import { useEffect, useState } from "react"
 import { CommonContainer } from "../styles.ts"
 import HamburgerButton from "./HamburgerButton.tsx"
+import { navbarHeight } from "./common.ts"
+import { device } from "../../theme.ts"
 
 const Navbar = () => {
   // only mobile has closeable menu
@@ -26,7 +27,7 @@ const Navbar = () => {
   return (
     <Header $showShadow={offset > 60} $isOpen={isOpen}>
       <NavContainer>
-        <Logo isOpen={isOpen} setIsOpen={setIsOpen} />
+        <Logo setIsOpen={setIsOpen} />
         <Links isOpen={isOpen} setIsOpen={setIsOpen} />
         <HamburgerButton isOpen={isOpen} setIsOpen={setIsOpen} />
       </NavContainer>
@@ -35,8 +36,8 @@ const Navbar = () => {
 }
 
 const Header = styled.nav<{ $showShadow: boolean; $isOpen: boolean }>`
-  height: 60px;
-  line-height: 60px;
+  height: ${navbarHeight.desktopL};
+  line-height: ${navbarHeight.desktopL};
   position: sticky;
   top: 0;
   z-index: 99;
@@ -47,14 +48,32 @@ const Header = styled.nav<{ $showShadow: boolean; $isOpen: boolean }>`
     $isOpen ? theme.color.black : theme.color.white};
   color: ${({ $isOpen, theme }) =>
     $isOpen ? theme.color.white : theme.color.black};
+
+  @media ${device.desktop} {
+    height: ${navbarHeight.desktop};
+    line-height: ${navbarHeight.desktop};
+  }
+
+  @media ${device.tablet} {
+    height: ${navbarHeight.tablet};
+    line-height: ${navbarHeight.tablet};
+  }
 `
 
 const NavContainer = styled(CommonContainer)`
-  height: 60px;
+  height: ${navbarHeight.desktopL};
   padding: 0 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media ${device.desktop} {
+    height: ${navbarHeight.desktop};
+  }
+
+  @media ${device.tablet} {
+    height: ${navbarHeight.tablet};
+  }
 `
 
 export default Navbar

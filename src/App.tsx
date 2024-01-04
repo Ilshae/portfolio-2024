@@ -35,4 +35,5 @@ export default App
 - animacje i podkreślenia pod indywidualnymi przyciskami anchorów
 - coś jest nie tak z czcionka noto-sans
 - dodaj style slide bottom, to jest animacja przy renderowaniu strony
+- brak animacji pojawiania się linkow
  */

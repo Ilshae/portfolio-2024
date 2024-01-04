@@ -62,7 +62,7 @@ const Nav = styled.nav<{ $isOpen: boolean }>`
 
 const Link = styled(RSLink)`
   margin-right: 32px;
-  font-size: 1.25rem;
+  font-size: ${({ theme }) => theme.fontSize.xl2};
   font-weight: 700;
   position: relative;
   padding-bottom: 6px;
@@ -97,11 +97,20 @@ const Link = styled(RSLink)`
     margin-right: 0;
   }
 
+  @media ${device.desktop} {
+    font-size: ${({ theme }) => theme.fontSize.xl};
+  }
+
+  @media ${device.laptop} {
+    font-size: ${({ theme }) => theme.fontSize.l};
+  }
+
   @media ${device.tablet} {
     margin: 24px 0;
-    font-size: ${({ theme }) => theme.fontSize.bigTitle};
+    font-size: ${({ theme }) => theme.fontSize.xl2};
     width: min-content;
     padding-bottom: 0;
+    height: 50px;
   }
 `
 

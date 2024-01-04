@@ -11,3 +11,9 @@ export const defLinkProps = {
   smooth: true,
   duration: 300,
 }
+
+export const navbarHeight = {
+  desktopL: "80px",
+  desktop: "70px",
+  tablet: "60px",
+}
