@@ -17,6 +17,7 @@ const Logo: FC<{ setIsOpen: Dispatch<boolean> }> = ({ setIsOpen }) => {
 }
 
 const Link = styled(RSLink)`
+  transition: all 0.3s;
   height: ${navbarHeight.desktopL};
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSize.xl4};

@@ -9,42 +9,52 @@ const Links: FC<{ isOpen: boolean; setIsOpen: Dispatch<boolean> }> = ({
   setIsOpen,
 }) => {
   return (
-    <Nav $isOpen={isOpen}>
-      <Link
-        to={menuAnchors.home}
-        activeClass="active"
-        onClick={() => setIsOpen(false)}
-        {...defLinkProps}
-      >
-        Home
-      </Link>
-      <Link
-        to={menuAnchors.about}
-        activeClass="active"
-        onClick={() => setIsOpen(false)}
-        {...defLinkProps}
-      >
-        About
-      </Link>
-      <Link
-        to={menuAnchors.work}
-        activeClass="active"
-        onClick={() => setIsOpen(false)}
-        {...defLinkProps}
-      >
-        Work
-      </Link>
-      <Link
-        to={menuAnchors.contact}
-        activeClass="active"
-        onClick={() => setIsOpen(false)}
-        {...defLinkProps}
-      >
-        Contact
-      </Link>
-    </Nav>
+    <Wrapper $isOpen={isOpen}>
+      <Nav $isOpen={isOpen}>
+        <Link
+          to={menuAnchors.home}
+          activeClass="active"
+          onClick={() => setIsOpen(false)}
+          {...defLinkProps}
+        >
+          Home
+        </Link>
+        <Link
+          to={menuAnchors.about}
+          activeClass="active"
+          onClick={() => setIsOpen(false)}
+          {...defLinkProps}
+        >
+          About
+        </Link>
+        <Link
+          to={menuAnchors.work}
+          activeClass="active"
+          onClick={() => setIsOpen(false)}
+          {...defLinkProps}
+        >
+          Work
+        </Link>
+        <Link
+          to={menuAnchors.contact}
+          activeClass="active"
+          onClick={() => setIsOpen(false)}
+          {...defLinkProps}
+        >
+          Contact
+        </Link>
+      </Nav>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div<{ $isOpen: boolean }>`
+  transition: opacity 0.3s;
+
+  @media ${device.tablet} {
+    opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")};
+  }
+`
 
 const Nav = styled.nav<{ $isOpen: boolean }>`
   @media ${device.tablet} {
