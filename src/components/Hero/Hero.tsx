@@ -14,7 +14,7 @@ const Hero = () => {
         <p>Hello, I'm a Software Engineer.</p>
       </TextWrapper>
       <ImgWrapper>
-        <img src={"/assets/images/hero.jpg"} alt={"hero"} />
+        <img src={"/assets/images/officeStyle/hero.jpg"} alt={"hero"} />
       </ImgWrapper>
     </StyledElement>
   )

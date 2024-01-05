@@ -2,11 +2,11 @@ import { Theme, theme } from "./theme.ts"
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
 import { FC, lazy, Suspense } from "react"
 import Loading from "./components/Loading/Loading.tsx"
-import Content from "./components/Content/Content.tsx"
 import { CommonContainer } from "./components/styles.ts"
 
 const Navbar = lazy(() => import("./components/Navbar/Navbar.tsx"))
 const Hero = lazy(() => import("./components/Hero/Hero.tsx"))
+const About = lazy(() => import("./components/About/About.tsx"))
 
 const App: FC = () => {
   return (
@@ -16,7 +16,7 @@ const App: FC = () => {
         <Navbar />
         <Container>
           <Hero />
-          <Content />
+          <About />
         </Container>
       </ThemeProvider>
     </Suspense>
@@ -45,4 +45,5 @@ export default App
 - coś jest nie tak z czcionka noto-sans
 - dodaj style slide bottom, to jest animacja przy renderowaniu strony
 - brak animacji pojawiania się linkow
+- home nie jest automatycznie podświetlony
  */
