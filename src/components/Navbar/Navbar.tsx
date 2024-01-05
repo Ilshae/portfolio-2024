@@ -62,7 +62,6 @@ const Header = styled.nav<{ $showShadow: boolean; $isOpen: boolean }>`
 
 const NavContainer = styled(CommonContainer)`
   height: ${navbarHeight.desktopL};
-  padding: 0 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -1,5 +1,5 @@
 import { Theme, theme } from "./theme.ts"
-import { createGlobalStyle, ThemeProvider } from "styled-components"
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
 import { FC, lazy, Suspense } from "react"
 import Loading from "./components/Loading/Loading.tsx"
 import Content from "./components/Content/Content.tsx"
@@ -14,10 +14,10 @@ const App: FC = () => {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Navbar />
-        <CommonContainer>
+        <Container>
           <Hero />
           <Content />
-        </CommonContainer>
+        </Container>
       </ThemeProvider>
     </Suspense>
   )
@@ -31,6 +31,10 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     color: ${({ theme }) => theme.color.black};
     margin: 0;
   }
+`
+
+const Container = styled(CommonContainer)`
+  padding: 32px 0;
 `
 
 export default App
