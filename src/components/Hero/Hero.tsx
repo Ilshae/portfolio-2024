@@ -21,6 +21,8 @@ const Hero = () => {
 
 const StyledElement = styled(Element)`
   display: flex;
+  justify-content: space-around;
+  align-items: center;
 `
 
 const inOut = keyframes`
@@ -30,6 +32,8 @@ const inOut = keyframes`
 `
 
 const TextWrapper = styled.div`
+  max-width: 600px;
+
   h1 {
     font-size: 88px;
     text-transform: uppercase;
@@ -59,11 +63,9 @@ const TextWrapper = styled.div`
 `
 
 const ImgWrapper = styled.div`
-  margin-left: auto;
-
   img {
     width: 100%;
-    max-width: 700px;
+    max-width: 600px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
