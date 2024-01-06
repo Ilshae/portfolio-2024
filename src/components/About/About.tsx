@@ -9,15 +9,21 @@ const About = () => {
   return (
     <StyledElement name={menuAnchors.about}>
       <h1>About</h1>
-      <h2>Skills</h2>
       <Wrapper>
         <ImgWrapper>
           <img src={"/assets/images/officeStyle/design.jpg"} alt={"hero"} />
         </ImgWrapper>
         <TilesWrapper>
+          <h2>Skills</h2>
           <div>
             {tiles.map((t) => (
-              <Tile href={t.href} title={t.title} imageUrl={t.imageUrl} />
+              <Tile
+                key={t.title}
+                href={t.href}
+                title={t.title}
+                imageUrl={t.imageUrl}
+                color={t.color}
+              />
             ))}
           </div>
         </TilesWrapper>
@@ -31,11 +37,12 @@ const StyledElement = styled(Element)`
   text-align: center;
 
   h1 {
-    font-size: ${({ theme }) => theme.fontSize.xl3};
+    font-size: ${({ theme }) => theme.fontSize.xl4};
   }
 
   h2 {
-    padding-bottom: 24px;
+    font-size: ${({ theme }) => theme.fontSize.xl3};
+    margin: 0 0 24px 0;
   }
 `
 
@@ -43,6 +50,10 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  @media ${device.tablet} {
+    flex-direction: column-reverse;
+  }
 `
 
 const ImgWrapper = styled.div`
@@ -63,15 +74,40 @@ const TilesWrapper = styled.div`
   width: 600px;
   padding-left: 64px;
 
+  @media ${device.laptopL} {
+    padding-left: 32px;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  @media ${device.tablet} {
+    padding-left: 0;
+  }
+
   div {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
     grid-column-gap: 10px;
-    -moz-column-gap: 10px;
     column-gap: 10px;
     grid-row-gap: 10px;
     row-gap: 10px;
     white-space: nowrap;
+
+    @media ${device.laptopL} {
+      grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+      grid-column-gap: 5px;
+      column-gap: 5px;
+      grid-row-gap: 5px;
+      row-gap: 5px;
+    }
+
+    @media ${device.tablet} {
+      grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+      grid-column-gap: 5px;
+      column-gap: 5px;
+      grid-row-gap: 5px;
+      row-gap: 5px;
+    }
   }
 `
 
