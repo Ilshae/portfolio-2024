@@ -1,6 +1,6 @@
 import { FC } from "react"
 import styled from "styled-components"
-import { device } from "../../theme.ts"
+import { device } from "../../../theme.ts"
 
 const Tile: FC<{
   title: string
