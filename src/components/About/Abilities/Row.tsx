@@ -1,11 +1,12 @@
 import { FC, ReactNode } from "react"
 import styled from "styled-components"
 
-const Row: FC<{ title: string; imgUrl: string; children: ReactNode }> = ({
-  title,
-  imgUrl,
-  children,
-}) => {
+const Row: FC<{
+  title: string
+  imgUrl: string
+  vidUrl?: string
+  children: ReactNode
+}> = ({ title, imgUrl, vidUrl, children }) => {
   return (
     <Wrapper>
       <Text>
@@ -13,7 +14,14 @@ const Row: FC<{ title: string; imgUrl: string; children: ReactNode }> = ({
         <p>{children}</p>
       </Text>
       <Graphic>
-        <img src={imgUrl} alt={title} />
+        {vidUrl ? (
+          <Video autoPlay muted loop>
+            <source src={vidUrl} type="video/mp4" />
+            <img src={imgUrl} alt={title} />
+          </Video>
+        ) : (
+          <img src={imgUrl} alt={title} />
+        )}
       </Graphic>
     </Wrapper>
   )
@@ -44,5 +52,9 @@ const Text = styled.div`
 `
 
 const Graphic = styled.div``
+
+const Video = styled.video`
+  max-height: 400px;
+`
 
 export default Row

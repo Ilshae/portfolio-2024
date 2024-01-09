@@ -8,6 +8,7 @@ const Abilities = () => {
       <Row
         title={"Website"}
         imgUrl={"/assets/images/apps/jachty-pruszynski.jpg"}
+        vidUrl={"/assets/images/apps/jachty-pruszynski.mp4"}
       >
         I can build your website in Wordpress, React or just Javascript. Having
         a website provides great opportunities for your business. This is a
