@@ -58,6 +58,21 @@ const TilesWrapper = styled.div`
   h2 {
     font-size: ${({ theme }) => theme.fontSize.xl3};
     margin: 0 0 24px 0;
+
+    @media ${device.laptop} {
+      margin: 0 0 16px 0;
+      font-size: ${({ theme }) => theme.fontSize.xl2};
+    }
+
+    @media ${device.tablet} {
+      font-size: ${({ theme }) => theme.fontSize.xl};
+      margin: 0 0 24px 0;
+    }
+
+    @media ${device.mobileL} {
+      font-size: ${({ theme }) => theme.fontSize.l};
+      margin: 0 0 16px 0;
+    }
   }
 
   @media ${device.laptopL} {

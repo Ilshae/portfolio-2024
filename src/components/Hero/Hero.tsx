@@ -24,7 +24,6 @@ const StyledElement = styled(Element)`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-bottom: 32px;
 
   @media ${device.laptopL} {
     justify-content: space-between;

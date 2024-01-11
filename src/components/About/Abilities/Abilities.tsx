@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import Row from "./Row.tsx"
+import { device } from "../../../theme.ts"
 
 const Abilities = () => {
   return (
@@ -66,6 +67,21 @@ const Wrapper = styled.section`
   h2 {
     font-size: ${({ theme }) => theme.fontSize.xl3};
     margin: 96px 0 32px 0;
+
+    @media ${device.laptop} {
+      margin: 80px 0 24px 0;
+      font-size: ${({ theme }) => theme.fontSize.xl2};
+    }
+
+    @media ${device.tablet} {
+      font-size: ${({ theme }) => theme.fontSize.xl};
+      margin: 64px 0 16px 0;
+    }
+
+    @media ${device.mobileL} {
+      font-size: ${({ theme }) => theme.fontSize.l};
+      margin: 48px 0 16px 0;
+    }
   }
 `
 

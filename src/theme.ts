@@ -14,9 +14,9 @@ export const theme = {
     margin: {
       desktop: "0 100px",
       laptopL: "0 80px",
-      laptop: "0 20px",
-      tablet: "0 20px",
-      mobileM: "0 20px",
+      laptop: "0 40px",
+      tablet: "0 35px",
+      mobileM: "0 30px",
     },
   },
   fontFamily: "'Noto Sans', sans-serif",
@@ -28,6 +28,7 @@ export const theme = {
     xl2: "32px",
     xl3: "40px",
     xl4: "44px",
+    xl5: "48px",
   },
   screenSize: {
     mobileS: "320px",

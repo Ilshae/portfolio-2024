@@ -66,11 +66,19 @@ const Wrapper = styled.div<{ $textOnRight: boolean }>`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 0 0 64px 0;
+  margin: 0 0 80px 0;
 
   @media ${device.tablet} {
     flex-direction: ${({ $textOnRight }) =>
       $textOnRight ? "column-reverse" : "column"};
+  }
+
+  @media ${device.laptop} {
+    margin: 0 0 64px 0;
+  }
+
+  @media ${device.tablet} {
+    margin: 0 0 48px 0;
   }
 `
 
@@ -93,6 +101,14 @@ const TextWrapper = styled.div<{ $textOnRight: boolean }>`
 
     @media ${device.laptopL} {
       font-size: ${({ theme }) => theme.fontSize.xl};
+    }
+
+    @media ${device.laptop} {
+      margin: 0 0 16px 0;
+    }
+
+    @media ${device.tablet} {
+      font-size: ${({ theme }) => theme.fontSize.l};
     }
   }
 
