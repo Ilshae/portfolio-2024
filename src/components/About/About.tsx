@@ -20,7 +20,7 @@ const StyledElement = styled(Element)`
 
   h1 {
     font-size: ${({ theme }) => theme.fontSize.xl4};
-    margin: 32px 0;
+    margin: 96px 0 32px 0;
   }
 `
 

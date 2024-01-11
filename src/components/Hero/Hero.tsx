@@ -43,6 +43,7 @@ const inOut = keyframes`
 
 const TextWrapper = styled.div`
   max-width: 600px;
+  padding-right: 32px;
 
   h1 {
     font-size: 88px;

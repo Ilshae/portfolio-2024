@@ -65,7 +65,7 @@ const Abilities = () => {
 const Wrapper = styled.section`
   h2 {
     font-size: ${({ theme }) => theme.fontSize.xl3};
-    margin: 48px 0;
+    margin: 96px 0 32px 0;
   }
 `
 

@@ -1,5 +1,6 @@
 import { FC, ReactNode } from "react"
 import styled from "styled-components"
+import { device } from "../../../theme.ts"
 
 const Row: FC<{
   title: string
@@ -9,16 +10,19 @@ const Row: FC<{
   children: ReactNode
 }> = ({ title, imgUrl, vidUrl, textOnRight = false, children }) => {
   return (
-    <Wrapper>
+    <Wrapper $textOnRight={textOnRight}>
       {textOnRight ? (
         <>
           <Graphic imgUrl={imgUrl} vidUrl={vidUrl} title={title} />
-          <Text title={title}>{children}</Text>
+          <Text title={title} textOnRight={textOnRight}>
+            {children}
+          </Text>
         </>
       ) : (
         <>
-          {" "}
-          <Text title={title}>{children}</Text>
+          <Text title={title} textOnRight={textOnRight}>
+            {children}
+          </Text>
           <Graphic imgUrl={imgUrl} vidUrl={vidUrl} title={title} />
         </>
       )}
@@ -26,12 +30,13 @@ const Row: FC<{
   )
 }
 
-const Text: FC<{ title: string; children: ReactNode }> = ({
-  title,
-  children,
-}) => {
+const Text: FC<{
+  title: string
+  textOnRight: boolean
+  children: ReactNode
+}> = ({ title, textOnRight, children }) => {
   return (
-    <TextWrapper>
+    <TextWrapper $textOnRight={textOnRight}>
       <h3>{title}</h3>
       <p>{children}</p>
     </TextWrapper>
@@ -57,16 +62,27 @@ const Graphic: FC<{ imgUrl: string; title: string; vidUrl?: string }> = ({
   )
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ $textOnRight: boolean }>`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 64px 0;
+  margin: 0 0 64px 0;
+
+  @media ${device.tablet} {
+    flex-direction: ${({ $textOnRight }) =>
+      $textOnRight ? "column-reverse" : "column"};
+  }
 `
 
-const TextWrapper = styled.div`
+const TextWrapper = styled.div<{ $textOnRight: boolean }>`
   max-width: 600px;
   text-align: left;
+  padding: ${({ $textOnRight }) =>
+    $textOnRight ? "0 0 0 32px" : "0 32px 0 0"};
+
+  @media ${device.tablet} {
+    padding: 0;
+  }
 
   h3 {
     border-left: 5px solid ${({ theme }) => theme.color.pink};
@@ -74,11 +90,19 @@ const TextWrapper = styled.div`
     padding-left: 16px;
     text-align: left;
     font-size: ${({ theme }) => theme.fontSize.xl2};
+
+    @media ${device.laptopL} {
+      font-size: ${({ theme }) => theme.fontSize.xl};
+    }
   }
 
   p {
     font-size: ${({ theme }) => theme.fontSize.xl};
     color: ${({ theme }) => theme.color.grey};
+
+    @media ${device.laptopL} {
+      font-size: ${({ theme }) => theme.fontSize.l};
+    }
   }
 `
 
@@ -87,7 +111,15 @@ const GraphicWrapper = styled.div`
   video {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    max-height: 310px;
+    max-width: 600px;
+
+    @media ${device.laptopL} {
+      max-width: 400px;
+    }
+
+    @media ${device.laptop} {
+      max-width: 300px;
+    }
   }
 `
 
