@@ -22,6 +22,42 @@ const Abilities = () => {
         </Link>{" "}
         which I made.
       </Row>
+
+      <Row
+        title={"Design & Graphic"}
+        imgUrl={"/assets/images/apps/desktop-mobile.jpg"}
+        textOnRight={true}
+      >
+        I can create designs that look awesome on any device and prepare
+        promotional graphic and image materials. This is{" "}
+        <Link
+          href="https://ilshae.github.io/crwn-clothing/"
+          target="_blank"
+          rel={"noopener noreferrer"}
+        >
+          Crwn Clothing
+        </Link>
+        . It's a shop page with stripe payments.
+      </Row>
+
+      <Row
+        title={"Hosting Support & SEO"}
+        imgUrl={"/assets/images/apps/seo.jpg"}
+      >
+        I can take care of your website. Optimise page structure and code, use
+        tools like Google Analytics or Speed Insights to increase search
+        results.
+      </Row>
+
+      <Row
+        title={"E-Commerce & English"}
+        imgUrl={"/assets/images/apps/e-commerce.jpg"}
+        textOnRight={true}
+      >
+        I have experience in designing marketing content for various platforms
+        like Allegro and Facebook. I speak fluent English and know technical
+        vocabulary allowing me to fully understand documentations.
+      </Row>
     </Wrapper>
   )
 }
