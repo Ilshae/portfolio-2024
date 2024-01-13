@@ -3,6 +3,7 @@ import { menuAnchors } from "../Navbar/common.ts"
 import styled from "styled-components"
 import Skills from "./Skills/Skills.tsx"
 import Abilities from "./Abilities/Abilities.tsx"
+import Work from "./Work/Work.tsx"
 import { device } from "../../theme.ts"
 
 const About = () => {
@@ -11,6 +12,7 @@ const About = () => {
       <h1>About</h1>
       <Skills />
       <Abilities />
+      <Work />
     </StyledElement>
   )
 }
