@@ -153,13 +153,20 @@ const StyledElement = styled(Element)`
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  grid-column-gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr;
   column-gap: 15px;
-  grid-row-gap: 15px;
   row-gap: 15px;
-  max-width: 900px;
-  margin: 0 auto;
+
+  @media ${device.desktop} {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5px;
+    row-gap: 5px;
+  }
+
+  @media ${device.tablet} {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
 `
 
 export default Work

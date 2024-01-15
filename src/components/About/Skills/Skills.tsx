@@ -88,25 +88,19 @@ const TilesWrapper = styled.div`
   div {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
-    grid-column-gap: 10px;
     column-gap: 10px;
-    grid-row-gap: 10px;
     row-gap: 10px;
     white-space: nowrap;
 
     @media ${device.laptopL} {
       grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
-      grid-column-gap: 5px;
       column-gap: 5px;
-      grid-row-gap: 5px;
       row-gap: 5px;
     }
 
     @media ${device.tablet} {
       grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-      grid-column-gap: 5px;
       column-gap: 5px;
-      grid-row-gap: 5px;
       row-gap: 5px;
     }
   }
