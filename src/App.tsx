@@ -3,6 +3,7 @@ import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
 import { FC, lazy, Suspense } from "react"
 import Loading from "./components/Loading/Loading.tsx"
 import { CommonContainer } from "./components/styles.ts"
+import Footer from "./components/Footer/Footer.tsx"
 
 const Navbar = lazy(() => import("./components/Navbar/Navbar.tsx"))
 const Hero = lazy(() => import("./components/Hero/Hero.tsx"))
@@ -22,6 +23,7 @@ const App: FC = () => {
           <Work />
           <Contact />
         </Container>
+        <Footer />
       </ThemeProvider>
     </Suspense>
   )
