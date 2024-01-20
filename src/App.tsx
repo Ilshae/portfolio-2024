@@ -7,6 +7,8 @@ import { CommonContainer } from "./components/styles.ts"
 const Navbar = lazy(() => import("./components/Navbar/Navbar.tsx"))
 const Hero = lazy(() => import("./components/Hero/Hero.tsx"))
 const About = lazy(() => import("./components/About/About.tsx"))
+const Work = lazy(() => import("./components/Work/Work.tsx"))
+const Contact = lazy(() => import("./components/Contact/Contact.tsx"))
 
 const App: FC = () => {
   return (
@@ -17,6 +19,8 @@ const App: FC = () => {
         <Container>
           <Hero />
           <About />
+          <Work />
+          <Contact />
         </Container>
       </ThemeProvider>
     </Suspense>
@@ -46,4 +50,5 @@ export default App
 - dodaj style slide bottom, to jest animacja przy renderowaniu strony
 - brak animacji pojawiania się linkow
 - home nie jest automatycznie podświetlony
+- common style
  */

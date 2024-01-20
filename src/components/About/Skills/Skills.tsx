@@ -2,13 +2,14 @@ import Tile from "./Tile.tsx"
 import { tiles } from "./tiles.ts"
 import styled from "styled-components"
 import { device } from "../../../theme.ts"
+import { H2Title, H3Title } from "../../styles.ts"
 
 const Skills = () => {
   return (
     <Wrapper>
       <TilesWrapper>
-        <h2>About me</h2>
-        <h3>My skills</h3>
+        <H2Title>About me</H2Title>
+        <H3Title>My skills</H3Title>
         <div>
           {tiles.map((t) => (
             <Tile
@@ -34,40 +35,6 @@ const Wrapper = styled.section`
 const TilesWrapper = styled.div`
   width: 600px;
   padding-left: 64px;
-
-  h2 {
-    font-size: ${({ theme }) => theme.fontSize.xl3};
-    margin: 96px 0 32px 0;
-
-    @media ${device.laptop} {
-      margin: 80px 0 24px 0;
-      font-size: ${({ theme }) => theme.fontSize.xl2};
-    }
-
-    @media ${device.tablet} {
-      font-size: ${({ theme }) => theme.fontSize.xl};
-      margin: 64px 0 16px 0;
-    }
-
-    @media ${device.mobileL} {
-      font-size: ${({ theme }) => theme.fontSize.l};
-      margin: 48px 0 16px 0;
-    }
-  }
-
-  h3 {
-    font-size: ${({ theme }) => theme.fontSize.xl2};
-    margin: 0;
-    padding: 0 0 16px 0;
-
-    @media ${device.laptopL} {
-      font-size: ${({ theme }) => theme.fontSize.xl};
-    }
-
-    @media ${device.laptop} {
-      font-size: ${({ theme }) => theme.fontSize.l};
-    }
-  }
 
   @media ${device.laptopL} {
     padding-left: 32px;

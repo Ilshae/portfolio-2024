@@ -1,14 +1,12 @@
 import { Element } from "react-scroll"
 import { menuAnchors } from "../Navbar/common.ts"
 import styled from "styled-components"
-import Skills from "./Skills/Skills.tsx"
-import Abilities from "./Abilities/Abilities.tsx"
+import { H2Title } from "../styles.ts"
 
-const About = () => {
+const Contact = () => {
   return (
-    <StyledElement name={menuAnchors.about}>
-      <Skills />
-      <Abilities />
+    <StyledElement name={menuAnchors.contact}>
+      <H2Title>Contact</H2Title>
     </StyledElement>
   )
 }
@@ -18,4 +16,4 @@ const StyledElement = styled(Element)`
   text-align: center;
 `
 
-export default About
+export default Contact
