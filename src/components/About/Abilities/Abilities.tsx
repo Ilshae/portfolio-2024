@@ -6,14 +6,31 @@ const Abilities = () => {
   return (
     <Wrapper>
       <h2>What I can do</h2>
+      <Row title={"UI & UX"} imgUrl={"/assets/images/officeStyle/design.jpg"}>
+        I collaborated with cross-functional teams, working closely with UX/UI
+        designers and back-end developers. I enforced coding standards,
+        enhancing codebase cleanliness and maintainability.
+      </Row>
+
       <Row
-        title={"Website"}
+        title={"Software Development"}
+        imgUrl={"/assets/images/apps/jenkins.jpg"}
+        textOnRight={true}
+      >
+        I actively contributed to development using Gerrit for code review and
+        version control and participated in Agile cycles with a focus on
+        adaptability. I have experience with Jenkins pipelines for continuous
+        integration and deployment.
+      </Row>
+
+      <Row
+        title={"Personal Projects"}
         imgUrl={"/assets/images/apps/jachty-pruszynski.jpg"}
         vidUrl={"/assets/images/apps/jachty-pruszynski.mp4"}
       >
-        I can build your website in Wordpress, React or just Javascript. Having
-        a website provides great opportunities for your business. This is a
-        website for{" "}
+        I can build a website using React, Wordpress or pure Javascript. Having
+        a well-developed website provides great opportunities for your business.
+        This is a website for{" "}
         <Link
           href="https://jachtypruszynski.pl/"
           target="_blank"
@@ -29,8 +46,8 @@ const Abilities = () => {
         imgUrl={"/assets/images/apps/desktop-mobile.jpg"}
         textOnRight={true}
       >
-        I can create designs that look awesome on any device and prepare
-        promotional graphic and image materials. This is{" "}
+        I can create graphical designs through Photoshop tailored for optimal
+        responsiveness on various devices. Here is{" "}
         <Link
           href="https://ilshae.github.io/crwn-clothing/"
           target="_blank"
@@ -38,26 +55,27 @@ const Abilities = () => {
         >
           Crwn Clothing
         </Link>
-        . It's a shop page with stripe payments.
+        . A shop page integrated with Stripe payments.
       </Row>
 
       <Row
         title={"Hosting Support & SEO"}
         imgUrl={"/assets/images/apps/seo.jpg"}
       >
-        I can take care of your website. Optimise page structure and code, use
-        tools like Google Analytics or Speed Insights to increase search
-        results.
+        I can optimise the page structure and code of your website. Use tools
+        such as Google Analytics or Speed Insights to boost search results,
+        ensuring your online presence.
       </Row>
 
       <Row
-        title={"E-Commerce & English"}
-        imgUrl={"/assets/images/apps/e-commerce.jpg"}
+        title={"Intercultural Skills"}
+        imgUrl={"/assets/images/officeStyle/walk.jpg"}
         textOnRight={true}
       >
-        I have experience in designing marketing content for various platforms
-        like Allegro and Facebook. I speak fluent English and know technical
-        vocabulary allowing me to fully understand documentations.
+        I'm fluent in English, enabling seamless communication in multicultural
+        and multilingual environments. This fosters collaboration, allowing me
+        to effectively navigate documentation and work harmoniously with team
+        members of different linguistic backgrounds.
       </Row>
     </Wrapper>
   )

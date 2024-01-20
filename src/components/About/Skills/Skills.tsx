@@ -6,11 +6,9 @@ import { device } from "../../../theme.ts"
 const Skills = () => {
   return (
     <Wrapper>
-      <ImgWrapper>
-        <img src={"/assets/images/officeStyle/design.jpg"} alt={"hero"} />
-      </ImgWrapper>
       <TilesWrapper>
-        <h2>Skills</h2>
+        <h2>About me</h2>
+        <h3>My skills</h3>
         <div>
           {tiles.map((t) => (
             <Tile
@@ -31,24 +29,6 @@ const Wrapper = styled.section`
   display: flex;
   justify-content: space-around;
   align-items: center;
-
-  @media ${device.tablet} {
-    flex-direction: column-reverse;
-  }
-`
-
-const ImgWrapper = styled.div`
-  img {
-    width: 100%;
-    max-width: 600px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-
-    @media ${device.tablet} {
-      margin-top: 24px;
-      max-height: 250px;
-    }
-  }
 `
 
 const TilesWrapper = styled.div`
@@ -57,21 +37,35 @@ const TilesWrapper = styled.div`
 
   h2 {
     font-size: ${({ theme }) => theme.fontSize.xl3};
-    margin: 0 0 24px 0;
+    margin: 96px 0 32px 0;
 
     @media ${device.laptop} {
-      margin: 0 0 16px 0;
+      margin: 80px 0 24px 0;
       font-size: ${({ theme }) => theme.fontSize.xl2};
     }
 
     @media ${device.tablet} {
       font-size: ${({ theme }) => theme.fontSize.xl};
-      margin: 0 0 24px 0;
+      margin: 64px 0 16px 0;
     }
 
     @media ${device.mobileL} {
       font-size: ${({ theme }) => theme.fontSize.l};
-      margin: 0 0 16px 0;
+      margin: 48px 0 16px 0;
+    }
+  }
+
+  h3 {
+    font-size: ${({ theme }) => theme.fontSize.xl2};
+    margin: 0;
+    padding: 0 0 16px 0;
+
+    @media ${device.laptopL} {
+      font-size: ${({ theme }) => theme.fontSize.xl};
+    }
+
+    @media ${device.laptop} {
+      font-size: ${({ theme }) => theme.fontSize.l};
     }
   }
 

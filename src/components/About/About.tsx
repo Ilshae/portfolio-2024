@@ -9,7 +9,6 @@ import { device } from "../../theme.ts"
 const About = () => {
   return (
     <StyledElement name={menuAnchors.about}>
-      <h1>About</h1>
       <Skills />
       <Abilities />
       <Work />
