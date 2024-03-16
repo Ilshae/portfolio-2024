@@ -34,8 +34,8 @@ const Work = () => {
         <Tile
           src="assets/images/apps/crwn-clothing.jpg"
           title="Crwn Clothing"
-          href="https://ilshae.github.io/crwn-clothing/"
-          hrefGithub="https://github.com/Ilshae/crwn-clothing-src"
+          href="https://crwn-clothing-2024.netlify.app/"
+          hrefGithub="https://github.com/Ilshae/crwn-clothing-src-2024"
           stack={[
             "html",
             "css",
