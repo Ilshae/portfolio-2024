@@ -1,4 +1,4 @@
-import { Theme, theme } from "./theme.ts"
+import { theme } from "./theme.ts"
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
 import { FC, lazy, Suspense } from "react"
 import Loading from "./components/Loading/Loading.tsx"
@@ -29,7 +29,7 @@ const App: FC = () => {
   )
 }
 
-const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
+const GlobalStyle = createGlobalStyle`
   body {
     font-family: ${({ theme }) => theme.fontFamily};
     line-height: 1.7;
