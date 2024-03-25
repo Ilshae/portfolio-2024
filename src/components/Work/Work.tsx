@@ -17,6 +17,7 @@ const Work = () => {
           stack={[
             "html",
             "css",
+            "cypress",
             "sass",
             "javascript",
             "react",
@@ -39,6 +40,7 @@ const Work = () => {
           stack={[
             "html",
             "css",
+            "cypress",
             "sass",
             "javascript",
             "react",
@@ -73,25 +75,6 @@ const Work = () => {
         >
           Dynamically sort trips by tags and duration or use a search bar.
           Ordered trips go to a JSON Server for later use.
-        </Tile>
-        <Tile
-          src="assets/images/apps/vivek-university.jpg"
-          title="Vivek University"
-          href="https://pruszynska.pl/"
-          hrefGithub="https://github.com/Ilshae/vivek-university"
-          stack={[
-            "html",
-            "css",
-            "sass",
-            "javascript",
-            "wordpress",
-            "advanced-custom-fields",
-            "github",
-            "webpack",
-          ]}
-        >
-          Wordpress site with a custom made theme. Register a new user and
-          login. Logged in users have access to Notes subpage.
         </Tile>
         <Tile
           src="assets/images/apps/mamma-mia-pizeria.jpg"
