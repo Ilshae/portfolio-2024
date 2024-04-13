@@ -1,42 +1,56 @@
 import { FC, ReactNode } from "react"
 import styled from "styled-components"
 import { device } from "../../theme.ts"
+import { Tooltip } from "react-tooltip"
 
 const Tile: FC<{
-  src: string
   title: string
   href: string
   hrefGithub?: string
   stack: string[]
   children: ReactNode
+  src?: string
 }> = ({ src, title, href, hrefGithub, stack, children }) => {
   return (
     <Wrapper>
-      <ImgWrapper>
-        <a href={href}>
-          <img src={src} alt={title} />
-        </a>
-      </ImgWrapper>
+      {src ? (
+        <ImgWrapper>
+          <a href={href} target={"_blank"}>
+            <img src={src} alt={title} />
+          </a>
+        </ImgWrapper>
+      ) : null}
       <Text>
         <Description>
           <h3>
-            <Link href={href}>{title}</Link>
+            <Link href={href} target={"_blank"}>
+              {title}
+            </Link>
           </h3>
           <p>{children}</p>
         </Description>
         <Footer>
           <Stack>
             {stack.map((item) => (
-              <img
-                key={item}
-                src={`assets/images/skills/${item}.png`}
-                alt={item}
-              />
+              <a id={item.replace(" ", "-").replace(" ", "-")}>
+                <img
+                  key={item}
+                  src={`assets/images/skills/${item}.png`}
+                  alt={item}
+                />
+                <Tooltip
+                  anchorSelect={`#${item.replace(" ", "-").replace(" ", "-")}`}
+                >
+                  {item}
+                </Tooltip>
+              </a>
             ))}
           </Stack>
           {hrefGithub ? (
             <GithubLink>
-              <Link href={hrefGithub}>CHECK CODE</Link>
+              <Link href={hrefGithub} target={"_blank"}>
+                CHECK CODE
+              </Link>
             </GithubLink>
           ) : null}
         </Footer>
