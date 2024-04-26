@@ -13,6 +13,9 @@ const Contact = () => {
           pruszynskaingrid@outlook.com
         </Link>
       </p>
+      <p>
+        <Link href={'tel:"+48790562167"'}>+48 790 562 167</Link>
+      </p>
     </StyledElement>
   )
 }
