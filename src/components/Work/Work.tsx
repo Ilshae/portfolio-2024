@@ -147,6 +147,15 @@ const Work = () => {
           Pure JavaScript app. Ordered products from cart go to a JSON Server.
           Live table booking.
         </Tile>
+        <Tile
+          src="assets/images/apps/homes.jpg"
+          title="Homes"
+          href="https://github.com/Ilshae/homes-app"
+          hrefGithub="https://github.com/Ilshae/homes-app"
+          stack={["HTML5", "CSS3", "SASS", "TypeScript", "Angular"]}
+        >
+          Simple Angular application.
+        </Tile>
       </Wrapper>
     </StyledElement>
   )
