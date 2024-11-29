@@ -5,8 +5,8 @@ import { Tooltip } from "react-tooltip"
 
 const Tile: FC<{
   title: string
-  href: string
-  hrefGithub?: string
+  href?: string
+  hrefGithub: string
   stack: string[]
   children: ReactNode
   src?: string
@@ -23,7 +23,7 @@ const Tile: FC<{
       <Text>
         <Description>
           <h3>
-            <Link href={href} target={"_blank"}>
+            <Link href={href ?? hrefGithub} target={"_blank"}>
               {title}
             </Link>
           </h3>
@@ -46,13 +46,11 @@ const Tile: FC<{
               </a>
             ))}
           </Stack>
-          {hrefGithub ? (
-            <GithubLink>
-              <Link href={hrefGithub} target={"_blank"}>
-                CHECK CODE
-              </Link>
-            </GithubLink>
-          ) : null}
+          <GithubLink>
+            <Link href={hrefGithub} target={"_blank"}>
+              CHECK CODE
+            </Link>
+          </GithubLink>
         </Footer>
       </Text>
     </Wrapper>

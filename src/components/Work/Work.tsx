@@ -17,13 +17,13 @@ const Work = () => {
           href="https://jachtypruszynski.pl/"
           hrefGithub="https://github.com/Ilshae/jachty-2"
           stack={[
-            "HTML5",
-            "CSS3",
-            "Cypress",
             "TypeScript",
             "Material UI",
             "React",
             "React Router",
+            "Cypress",
+            "HTML5",
+            "CSS3",
           ]}
         >
           A commercial project for a chartering company with detailed
@@ -35,16 +35,16 @@ const Work = () => {
           href="https://crwn-clothing-2024.netlify.app/"
           hrefGithub="https://github.com/Ilshae/crwn-clothing-src-2024"
           stack={[
-            "HTML5",
-            "CSS3",
-            "Cypress",
-            "SASS",
             "JavaScript",
             "React",
             "Redux",
             "React Router",
             "Firebase",
             "Styled Components",
+            "Cypress",
+            "HTML5",
+            "CSS3",
+            "SASS",
           ]}
         >
           Try out signing in with google or creating a new account and paying
@@ -68,15 +68,15 @@ const Work = () => {
           href="https://github.com/Ilshae/react-travel-agency"
           hrefGithub="https://github.com/Ilshae/react-travel-agency"
           stack={[
-            "HTML5",
-            "CSS3",
-            "SASS",
             "JavaScript",
             "React",
             "Redux",
             "Webpack",
             "React Router",
             "Jest",
+            "HTML5",
+            "CSS3",
+            "SASS",
           ]}
         >
           Dynamically sort trips by tags and duration or use a search bar.
@@ -88,13 +88,13 @@ const Work = () => {
           href="https://github.com/Ilshae/vivek-university"
           hrefGithub="https://github.com/Ilshae/project-pizzeria"
           stack={[
-            "HTML5",
-            "CSS3",
-            "SASS",
             "JavaScript",
             "Wordpress",
             "Advanced Custom Fields",
             "Webpack",
+            "HTML5",
+            "CSS3",
+            "SASS",
           ]}
         >
           Wordpress site with a custom made theme. Register a new user and
@@ -106,8 +106,6 @@ const Work = () => {
           href="https://github.com/Ilshae/fullstack-app"
           hrefGithub="https://github.com/Ilshae/fullstack-app"
           stack={[
-            "HTML5",
-            "CSS3",
             "JavaScript",
             "React",
             "React Intl",
@@ -123,6 +121,8 @@ const Work = () => {
             "Spring Boot Validation",
             "Spring Boot Security",
             "Java JSON WebToken",
+            "HTML5",
+            "CSS3",
           ]}
         >
           Engineering Project made for my university. React on frontend and
@@ -134,14 +134,14 @@ const Work = () => {
           href="https://github.com/Ilshae/project-pizzeria"
           hrefGithub="https://github.com/Ilshae/project-pizzeria"
           stack={[
-            "HTML5",
-            "CSS3",
-            "SASS",
             "JavaScript",
             "React",
             "Redux",
             "Webpack",
             "React Router",
+            "HTML5",
+            "CSS3",
+            "SASS",
           ]}
         >
           Pure JavaScript app. Ordered products from cart go to a JSON Server.
@@ -152,9 +152,18 @@ const Work = () => {
           title="Homes"
           href="https://github.com/Ilshae/homes-app"
           hrefGithub="https://github.com/Ilshae/homes-app"
-          stack={["HTML5", "CSS3", "SASS", "TypeScript", "Angular"]}
+          stack={["TypeScript", "Angular", "HTML5", "CSS3", "SASS"]}
         >
           Simple Angular application.
+        </Tile>
+        <Tile
+          src="assets/images/apps/node-app.jpg"
+          title="Node App"
+          href="https://github.com/Ilshae/node-app"
+          hrefGithub="https://github.com/Ilshae/node-app"
+          stack={["Node JS", "JavaScript", "EJS", "HTML5", "CSS3", "SASS"]}
+        >
+          Simple Node application.
         </Tile>
       </Wrapper>
     </StyledElement>
