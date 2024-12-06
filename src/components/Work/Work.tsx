@@ -4,167 +4,37 @@ import { menuAnchors } from "../Navbar/common.ts"
 import Tile from "./Tile.tsx"
 import { H2Title, H3Title } from "../styles.ts"
 import styled from "styled-components"
+import { projects } from "../../data/projects.ts"
 
 const Work = () => {
+  const { hosted, notHosted } = projects
+
   return (
     <StyledElement name={menuAnchors.work}>
       <H2Title>Work</H2Title>
       <H3Title>Hosted projects</H3Title>
       <Wrapper>
-        <Tile
-          src="assets/images/apps/jachty-pruszynski.jpg"
-          title="Jachty Pruszynski"
-          href="https://jachtypruszynski.pl/"
-          hrefGithub="https://github.com/Ilshae/jachty-2"
-          stack={[
-            "TypeScript",
-            "Material UI",
-            "React",
-            "React Router",
-            "Cypress",
-            "HTML5",
-            "CSS3",
-          ]}
-        >
-          A commercial project for a chartering company with detailed
-          descriptions of their products.
-        </Tile>
-        <Tile
-          src="assets/images/apps/crwn-clothing.jpg"
-          title="Crwn Clothing"
-          href="https://crwn-clothing-2024.netlify.app/"
-          hrefGithub="https://github.com/Ilshae/crwn-clothing-src-2024"
-          stack={[
-            "JavaScript",
-            "React",
-            "Redux",
-            "React Router",
-            "Firebase",
-            "Styled Components",
-            "Cypress",
-            "HTML5",
-            "CSS3",
-            "SASS",
-          ]}
-        >
-          Try out signing in with google or creating a new account and paying
-          with test credit card.
-        </Tile>
-        <Tile
-          src="assets/images/apps/tetris.jpg"
-          title="Tetris"
-          href="https://ilshae.github.io/tetris/"
-          hrefGithub="https://github.com/Ilshae/react-tetris"
-          stack={["HTML5", "CSS3", "SASS", "JavaScript", "React"]}
-        >
-          Press start and use arrows to play.
-        </Tile>
+        {hosted.map(
+          ({ image, title, description, href, hrefGithub, stack }) => (
+            <Tile
+              title={title}
+              href={href}
+              hrefGithub={hrefGithub}
+              stack={stack}
+              src={image}
+            >
+              {description}
+            </Tile>
+          )
+        )}
       </Wrapper>
       <H3Title>Other projects</H3Title>
       <Wrapper>
-        <Tile
-          src="assets/images/apps/hermes-travel-agency.jpg"
-          title="Hermes Travel Agency"
-          href="https://github.com/Ilshae/react-travel-agency"
-          hrefGithub="https://github.com/Ilshae/react-travel-agency"
-          stack={[
-            "JavaScript",
-            "React",
-            "Redux",
-            "Webpack",
-            "React Router",
-            "Jest",
-            "HTML5",
-            "CSS3",
-            "SASS",
-          ]}
-        >
-          Dynamically sort trips by tags and duration or use a search bar.
-          Ordered trips go to a JSON Server for later use.
-        </Tile>
-        <Tile
-          src="assets/images/apps/vivek-university.jpg"
-          title="Vivek University"
-          href="https://github.com/Ilshae/vivek-university"
-          hrefGithub="https://github.com/Ilshae/project-pizzeria"
-          stack={[
-            "JavaScript",
-            "Wordpress",
-            "Advanced Custom Fields",
-            "Webpack",
-            "HTML5",
-            "CSS3",
-            "SASS",
-          ]}
-        >
-          Wordpress site with a custom made theme. Register a new user and
-          login. Logged in users have access to Notes subpage.
-        </Tile>
-        <Tile
-          src="assets/images/apps/fullstack.jpg"
-          title="Fullstack application"
-          href="https://github.com/Ilshae/fullstack-app"
-          hrefGithub="https://github.com/Ilshae/fullstack-app"
-          stack={[
-            "JavaScript",
-            "React",
-            "React Intl",
-            "React Router",
-            "Cypress",
-            "Styled Components",
-            "Material UI",
-            "TanStack Query",
-            "Spring",
-            "Spring Boot",
-            "Spring Data JPA",
-            "Lombok",
-            "Spring Boot Validation",
-            "Spring Boot Security",
-            "Java JSON WebToken",
-            "HTML5",
-            "CSS3",
-          ]}
-        >
-          Engineering Project made for my university. React on frontend and
-          Spring on backend.
-        </Tile>
-        <Tile
-          src="assets/images/apps/mamma-mia-pizeria.jpg"
-          title="Mamma Mia Pizzeria"
-          href="https://github.com/Ilshae/project-pizzeria"
-          hrefGithub="https://github.com/Ilshae/project-pizzeria"
-          stack={[
-            "JavaScript",
-            "React",
-            "Redux",
-            "Webpack",
-            "React Router",
-            "HTML5",
-            "CSS3",
-            "SASS",
-          ]}
-        >
-          Pure JavaScript app. Ordered products from cart go to a JSON Server.
-          Live table booking.
-        </Tile>
-        <Tile
-          src="assets/images/apps/homes.jpg"
-          title="Homes"
-          href="https://github.com/Ilshae/homes-app"
-          hrefGithub="https://github.com/Ilshae/homes-app"
-          stack={["TypeScript", "Angular", "HTML5", "CSS3", "SASS"]}
-        >
-          Simple Angular application.
-        </Tile>
-        <Tile
-          src="assets/images/apps/node-app.jpg"
-          title="Node App"
-          href="https://github.com/Ilshae/node-app"
-          hrefGithub="https://github.com/Ilshae/node-app"
-          stack={["Node JS", "JavaScript", "EJS", "HTML5", "CSS3", "SASS"]}
-        >
-          Simple Node application.
-        </Tile>
+        {notHosted.map(({ image, title, description, hrefGithub, stack }) => (
+          <Tile title={title} hrefGithub={hrefGithub} stack={stack} src={image}>
+            {description}
+          </Tile>
+        ))}
       </Wrapper>
     </StyledElement>
   )

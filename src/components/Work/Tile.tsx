@@ -9,7 +9,7 @@ const Tile: FC<{
   hrefGithub: string
   stack: string[]
   children: ReactNode
-  src?: string
+  src: string
 }> = ({ src, title, href, hrefGithub, stack, children }) => {
   return (
     <Wrapper>
